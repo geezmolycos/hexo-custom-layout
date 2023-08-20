@@ -1,7 +1,14 @@
 - title: simple
-  route: test/
+  route: simple/
   expect: |-
     <body>
     <h1>Global template header</h1>
+    global template content
+    </body>
+- title: front_matter
+  route: front_matter/
+  expect: |-
+    <body>
+    <h1>wonderful title</h1>
     global template content
     </body>

@@ -1,0 +1,7 @@
+- title: simple
+  route: test/
+  expect: |
+    <body>
+    <h1>Global template header</h1>
+    global template content
+    </body>

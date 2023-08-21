@@ -1,7 +1,9 @@
 # Hexo custom layout
 
-[Changelog](./CHANGELOG.md)
-![example workflow](https://github.com/geezmolycos/hexo-custom-layout/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/geezmolycos/hexo-custom-layout/actions/workflows/ci.yml/badge.svg)](https://github.com/geezmolycos/hexo-custom-layout/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/hexo-custom-layout.svg)](https://badge.fury.io/js/hexo-custom-layout)
+
+[Changelog](./CHANGELOG.md) | [NPM registry](https://www.npmjs.com/package/hexo-custom-layout)
 
 This [Hexo](https://github.com/hexojs/hexo) plugin allows user to:
 

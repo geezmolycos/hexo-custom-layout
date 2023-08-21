@@ -1,19 +1,36 @@
 - title: front_matter
   source: front_matter
   expect: |-
-    <!-- layout layout_front_matter -->
+    <!-- layout layout_front_matter from -->
     <ul>
     <li>weasel</li>
     <li>penguin</li>
     <li>armadillo</li>
     </ul>
-    <!-- endlayout layout_front_matter -->
+    <!-- endlayout layout_front_matter from -->
+    <!-- layout layout_front_matter from -->
+    <ul>
+    <li>weasel</li>
+    <li>penguin</li>
+    <li>armadillo</li>
+    </ul>
+    <!-- endlayout layout_front_matter from -->
 - title: layoutwith and front matter
   source: layoutwith
   expect: |-
     <!-- layout layoutwith_front_matter from -->
     Source: 
     Foo: jackal
+    <ul>
+    <li>raven</li>
+    <li>skunk</li>
+    <li>parrot</li>
+    </ul>
+    <!-- endlayout layoutwith_front_matter from -->
+    <br>
+    <!-- layout layoutwith_front_matter from -->
+    Source: 
+    Foo: dingo
     <ul>
     <li>raven</li>
     <li>skunk</li>

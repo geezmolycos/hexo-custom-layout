@@ -8,7 +8,7 @@ const yaml = require('js-yaml');
 
 describe('layout path resolver', () => {
     const {
-        getActualLayoutPath, getActualLayoutPathFromArgs
+        getActualLayoutPath, getActualLayoutPathFromArgs, getLayoutArgsFromData
     } = require('../lib/layout_path_resolver');
     describe('getActualLayoutPath', () => {
         it('only layout', () => {
@@ -71,6 +71,35 @@ describe('layout path resolver', () => {
                 'foo/bar.html',
                 'source1/'
             ).should.equal('source1/foo/layout');
+        });
+    });
+    describe('getLayoutArgsFromData', () => {
+        it('only layout', () => {
+            getLayoutArgsFromData({
+                source: 'foo/bar.html',
+                layout: 'page'
+            }).should.deep.equal(['page', 'global']);
+        });
+        it('only layout asset', () => {
+            getLayoutArgsFromData({
+                source: 'foo/bar.html',
+                layout_asset: 'baz'
+            }).should.deep.equal(['baz', 'asset']);
+        });
+        it('layout from should take precedence', () => {
+            getLayoutArgsFromData({
+                source: 'foo/bar.html',
+                layout: 'page',
+                layout_from: 'baz'
+            }).should.deep.equal(['baz', 'from']);
+        });
+        it('layout asset should take precedence over all others', () => {
+            getLayoutArgsFromData({
+                source: 'foo/bar.html',
+                layout: 'page',
+                layout_from: 'baz',
+                layout_asset: 'foobar'
+            }).should.deep.equal(['foobar', 'asset']);
         });
     });
 });

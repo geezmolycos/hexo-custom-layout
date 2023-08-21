@@ -1,0 +1,9 @@
+- title: render_tag
+  source: render_tag
+  expect: |-
+    <!-- render njk -->
+    1<br>2<br>3<br>4<br>5<br>
+    <!-- endrender njk -->
+    <!-- render njk -->
+    sparrow
+    <!-- endrender njk -->

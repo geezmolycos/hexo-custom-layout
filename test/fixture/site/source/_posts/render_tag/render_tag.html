@@ -1,0 +1,12 @@
+---
+title: render_tag
+---
+{% render njk %}{% raw %}
+{% for i in [1,2,3,4,5] %}{{i}}<br>{% endfor %}
+{% endraw %}{% endrender %}
+{% renderwith njk %}{% raw %}
+---
+test3: sparrow
+---
+{{ test3 }}
+{% endraw %}{% endrenderwith %}

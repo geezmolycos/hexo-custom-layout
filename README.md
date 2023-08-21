@@ -1,5 +1,8 @@
 # Hexo custom layout
 
+[Changelog](./CHANGELOG.md)
+![example workflow](https://github.com/geezmolycos/hexo-custom-layout/actions/workflows/ci.yml/badge.svg)
+
 This [Hexo](https://github.com/hexojs/hexo) plugin allows user to:
 
 - Load custom layouts without modifying theme files
@@ -11,7 +14,6 @@ This [Hexo](https://github.com/hexojs/hexo) plugin allows user to:
   - Can pass arguments when referencing
 - Generate sub pages as standalone pages in post asset folders
 
-[Changelog](./CHANGELOG.md)
 
 ## Quick Start
 
@@ -98,5 +100,5 @@ Inserting templates works similarly. See [relevant test files](./test/fixture/si
 Put pages in post asset folder and name them as `<name>.page.<ext>` to render them as standalone pages.
 [See tests for examples.](./test/fixture/site/source/_posts/asset_pages/)
 
-See under [test](./test/README.md) for more examples.
+See under [test](./test/) for more examples.
 

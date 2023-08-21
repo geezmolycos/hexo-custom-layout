@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.0.0]
+## [1.0.0] - 2023-08-22
 
 - Allow loading global layouts without modifying theme
 - Allow loading local layouts including those in post asset folders

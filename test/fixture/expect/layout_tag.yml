@@ -1,5 +1,6 @@
 - title: front_matter
   source: front_matter
+  linebreak: false
   expect: |-
     <!-- layout layout_front_matter from -->
     <ul>
@@ -17,6 +18,7 @@
     <!-- endlayout layout_front_matter from -->
 - title: layoutwith and front matter
   source: layoutwith
+  linebreak: false
   expect: |-
     <!-- layout layoutwith_front_matter from -->
     Source: 

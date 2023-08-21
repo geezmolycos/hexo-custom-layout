@@ -1,0 +1,13 @@
+- title: undermain
+  source: main/undermain
+  is_page: true
+  expect: |-
+    under main
+    asset_pages/main/
+    
+- title: undersub
+  source: main/sub/undersub
+  is_page: true
+  expect: |-
+    under sub
+    asset_pages/main/

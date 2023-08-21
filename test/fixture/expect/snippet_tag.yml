@@ -1,0 +1,8 @@
+- title: main
+  source: main
+  expect: |-
+    hello <!-- snippet part.html from -->world<!-- endsnippet part.html from -->
+- title: main_with
+  source: main_with
+  expect: |-
+    <!-- snippet part_with.njk from -->part: dolphin; fish<!-- endsnippet part_with.njk from -->

@@ -1,5 +1,5 @@
 url: http://localhost
-root: /
+root: /blog/
 permalink: :title/
 source_dir: source
 post_asset_folder: true

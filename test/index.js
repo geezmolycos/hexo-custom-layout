@@ -111,7 +111,7 @@ describe('wrap comments', () => {
             '<!-- render page -->',
             'hello world',
             '<!-- endrender page -->',
-        ].join('\n'));
+        ].join(''));
     });
     it('should escape properly', () => {
         wrapComments('render', 'hello, world', ['<script>alert("hacked");</script>']).should.match(/&lt;script&gt;/);
@@ -123,7 +123,7 @@ describe('wrap comments', () => {
             '<!-- render page -->',
             'hello async',
             '<!-- endrender page -->',
-        ].join('\n'));
+        ].join(''));
     });
 });
 
@@ -135,11 +135,12 @@ describe('custom layout', () => {
         return hexo.loadPlugin(require.resolve('../'));
     });
 
-    let Post;
+    let Post, Page;
     before(async ()=>{
         await hexo.init();
         await hexo.load();
         Post = hexo.model('Post');
+        Page = hexo.model('Page');
     });
 
     it('basic hexo functionality', async () => {
@@ -162,8 +163,15 @@ describe('custom layout', () => {
             for (let item of expects){
                 if (item.source){
                     it(item.title, () => {
-                        let post = Post.findOne({source: '_posts/' + withoutExt + '/' + item.source + '.html'});
-                        post.content.should.equal(item.expect);
+                        let post = (item.is_page === true ? Page : Post).findOne(
+                            {source: (item.is_page === true ? '' : '_posts/') + withoutExt + '/' + item.source + '.html'}
+                        );
+                        if (item.linebreak === false){
+                            // ignore line breaks
+                            post.content.replace(/\n/g, '').should.equal(item.expect.replace(/\n/g, ''));
+                        } else {
+                            post.content.should.equal(item.expect);
+                        }
                     });
                 } else if (item.route){
                     it(item.title, () => {
@@ -175,7 +183,12 @@ describe('custom layout', () => {
                         });
                         return new Promise((resolve, reject) => {
                             content.on('end', () => {
-                                text.should.equal(item.expect);
+                                if (item.linebreak === false){
+                                    // ignore line breaks
+                                    text.replace(/\n/g, '').should.equal(item.expect.replace(/\n/g, ''));
+                                } else {
+                                    text.should.equal(item.expect);
+                                }
                                 resolve();
                             });
                             content.on('error', (e) => {

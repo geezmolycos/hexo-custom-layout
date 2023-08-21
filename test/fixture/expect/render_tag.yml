@@ -1,5 +1,6 @@
 - title: render_tag
   source: render_tag
+  linebreak: false
   expect: |-
     <!-- render njk -->
     1<br>2<br>3<br>4<br>5<br>

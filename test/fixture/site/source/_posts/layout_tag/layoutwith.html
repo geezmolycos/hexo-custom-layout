@@ -1,0 +1,14 @@
+---
+test2:
+  - raven
+  - skunk
+  - parrot
+---
+{% layoutwith layoutwith_front_matter %}
+foo: jackal
+{% endlayoutwith %}
+<br>
+{% layoutwith %}
+layout_from: layoutwith_front_matter
+foo: jackal
+{% endlayoutwith %}

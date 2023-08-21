@@ -56,6 +56,14 @@ describe('layout path resolver', () => {
                 'source1/'
             ).should.equal('source1/foo/bar/layout');
         });
+        it('absolute', () => {
+            getActualLayoutPathFromArgs(
+                'layout',
+                'abs',
+                'foo/bar.html',
+                'source1/'
+            ).should.equal('layout');
+        });
         it('no type', () => {
             getActualLayoutPathFromArgs(
                 'layout',
@@ -75,6 +83,9 @@ describe('wrap comments', () => {
             'hello world',
             '<!-- endrender page -->',
         ].join('\n'));
+    });
+    it('should escape properly', () => {
+        wrapComments('render', 'hello, world', ['<script>alert("hacked");</script>']).should.match(/&lt;script&gt;/);
     });
     it('async', async () => {
         (await wrapComments('render', new Promise((resolve, reject) => {
@@ -107,6 +118,12 @@ describe('custom layout', () => {
         basic.content.should.equal('Hello!\n');
     });
 
+    // load other test cases from 'expect' directory
+    // each yaml contains a list, in which each item is as follows:
+    // title: description of this case
+    // route or source: matching target: route means theme-rendered; source means before theme rendering
+    // expect: expected content
+    
     const expectDir = path.join(__dirname, 'fixture/expect');
     for (let filename of fs.listDirSync(expectDir)){
         let withoutExt = path.parse(filename).name;
@@ -116,7 +133,7 @@ describe('custom layout', () => {
             for (let item of expects){
                 if (item.source){
                     it(item.title, () => {
-                        let post = Post.findOne({source: '_posts/' + withoutExt + '/' + item.source});
+                        let post = Post.findOne({source: '_posts/' + withoutExt + '/' + item.source + '.html'});
                         post.content.should.equal(item.expect);
                     });
                 } else if (item.route){

@@ -7,9 +7,6 @@
 
 // also provides with a tag to render and insert a layout partial
 
-const path = require('path');
-const Promise = require('bluebird');
-
 // Global layout loader
 require('./lib/global_layout_loader')(hexo);
 
@@ -28,8 +25,6 @@ hexo.extend.filter.register('before_post_render', function(data){
     data.layout = getActualLayoutPath(data);
     return data;
 });
-
-const wrapComments = require('./lib/wrap_comments');
 
 // tags for rendering
 require('./lib/layout_tag')(hexo);

@@ -1,0 +1,32 @@
+- title: front_matter
+  source: front_matter
+  expect: |-
+    <!-- layout layout_front_matter -->
+    <ul>
+    <li>weasel</li>
+    <li>penguin</li>
+    <li>armadillo</li>
+    </ul>
+    <!-- endlayout layout_front_matter -->
+- title: layoutwith and front matter
+  source: layoutwith
+  expect: |-
+    <!-- layout layoutwith_front_matter -->
+    Source: 
+    Foo: jackal
+    <ul>
+    <li>raven</li>
+    <li>skunk</li>
+    <li>parrot</li>
+    </ul>
+    <!-- endlayout layoutwith_front_matter -->
+    <br>
+    <!-- layout layoutwith_front_matter -->
+    Source: _posts/layout_tag/layoutwith.html
+    Foo: jackal
+    <ul>
+    <li>raven</li>
+    <li>skunk</li>
+    <li>parrot</li>
+    </ul>
+    <!-- endlayout layoutwith_front_matter -->

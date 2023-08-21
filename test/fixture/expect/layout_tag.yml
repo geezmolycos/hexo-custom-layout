@@ -11,7 +11,7 @@
 - title: layoutwith and front matter
   source: layoutwith
   expect: |-
-    <!-- layout layoutwith_front_matter -->
+    <!-- layout layoutwith_front_matter from -->
     Source: 
     Foo: jackal
     <ul>
@@ -19,9 +19,9 @@
     <li>skunk</li>
     <li>parrot</li>
     </ul>
-    <!-- endlayout layoutwith_front_matter -->
+    <!-- endlayout layoutwith_front_matter from -->
     <br>
-    <!-- layout layoutwith_front_matter -->
+    <!-- layout layoutwith_front_matter from -->
     Source: _posts/layout_tag/layoutwith.html
     Foo: jackal
     <ul>
@@ -29,4 +29,4 @@
     <li>skunk</li>
     <li>parrot</li>
     </ul>
-    <!-- endlayout layoutwith_front_matter -->
+    <!-- endlayout layoutwith_front_matter from -->

@@ -14,7 +14,7 @@ const Promise = require('bluebird');
 require('./lib/global_layout_loader')(hexo);
 
 // local layout loader
-require('./lib/local_layout_loader');
+require('./lib/local_layout_loader')(hexo);
 
 const {getActualLayoutPath} = require('./lib/layout_path_resolver');
 

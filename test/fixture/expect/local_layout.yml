@@ -1,0 +1,14 @@
+- title: relative
+  route: simple/
+  expect: |-
+    <body>
+    <h1>Local: local layout title</h1>
+    local layout content
+    </body>
+- title: asset
+  route: asset/
+  expect: |-
+    <body>
+    <h1>Asset: asset layout title</h1>
+    asset layout content
+    </body>

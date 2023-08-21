@@ -2,5 +2,7 @@ url: http://localhost
 root: /
 permalink: :title/
 source_dir: source
+post_asset_folder: true
+new_post_name: ':title.html'
 
 theme: minimum

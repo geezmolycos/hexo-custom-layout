@@ -143,7 +143,7 @@ describe('custom layout', () => {
         Page = hexo.model('Page');
     });
 
-    it('basic hexo functionality', async () => {
+    it('basic hexo functionality', () => {
         let basic = Post.findOne({source: '_posts/basic.html'});
         basic.content.should.equal('Hello!\n');
     });
@@ -166,6 +166,7 @@ describe('custom layout', () => {
                         let post = (item.is_page === true ? Page : Post).findOne(
                             {source: (item.is_page === true ? '' : '_posts/') + withoutExt + '/' + item.source + '.html'}
                         );
+                        should.exist(post);
                         if (item.linebreak === false){
                             // ignore line breaks
                             post.content.replace(/\n/g, '').should.equal(item.expect.replace(/\n/g, ''));
@@ -183,6 +184,7 @@ describe('custom layout', () => {
                         });
                         return new Promise((resolve, reject) => {
                             content.on('end', () => {
+                                text.length.should.not.equal(0);
                                 if (item.linebreak === false){
                                     // ignore line breaks
                                     text.replace(/\n/g, '').should.equal(item.expect.replace(/\n/g, ''));

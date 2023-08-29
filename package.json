@@ -1,6 +1,6 @@
 {
     "name": "hexo-custom-layout",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Load custom layouts and render partial template",
     "main": "index",
     "scripts": {

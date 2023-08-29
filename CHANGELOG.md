@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.1.0] - 2023-08-29
+
+- Properly uses `template_locals` to generate local variables for `layout` and `layoutwith` tags
+
 ## [1.0.0] - 2023-08-22
 
 - Allow loading global layouts without modifying theme

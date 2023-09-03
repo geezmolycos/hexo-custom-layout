@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.1.1] - 2023-09-03
+
+- Update `site` local variable cache when file are loaded, allowing layout tags to read post or page info
+
 ## [1.1.0] - 2023-08-29
 
 - Properly uses `template_locals` to generate local variables for `layout` and `layoutwith` tags
